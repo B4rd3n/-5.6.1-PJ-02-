@@ -31,7 +31,8 @@ def main_menu():
     value_btn = types.InlineKeyboardButton('💸 Доступные валюты', callback_data="value")
     favourite_btn = types.InlineKeyboardButton('⭐Избранные', callback_data="favourites")
 
-    markup.add(help_btn, value_btn)
+    markup.row(help_btn)
+    markup.row(value_btn)
     markup.row(favourite_btn)
 
     return markup
@@ -53,7 +54,7 @@ def redact_favourite():
 
     add_fav = types.InlineKeyboardButton('➕ Добавить', callback_data = "add")
     remove_fav = types.InlineKeyboardButton('➖ Убрать', callback_data = "remove")
-    show_fav = types.InlineKeyboardButton('📝 Список Избранного', callback_data = "show")
+    show_fav = types.InlineKeyboardButton('📝 Список избранного', callback_data = "show")
     back_btn = types.InlineKeyboardButton('⬅️ Назад', callback_data = "main_menu")
 
     markup.add(add_fav, remove_fav)
@@ -179,6 +180,7 @@ def converter(message : telebot.types.Message):
 
 
 bot.polling(none_stop = True)
+
 
 
 
