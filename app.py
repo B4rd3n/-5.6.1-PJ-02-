@@ -119,7 +119,7 @@ def callback_menu_buttons(call):
         with open("currencies.txt", "w", encoding='utf-8') as curr_list:
             curr_list.write(AvailableCurrencies.get_curr_txt())
 
-        bot.send_message(call.message.chat.id, "Ознакомиться со списком доступных валют можно здесь: ")
+        bot.send_message(call.message.chat.id, "Ознакомиться со списком всех валют можно здесь: ")
 
         with open("currencies.txt", "rb") as f:
 
@@ -179,6 +179,7 @@ def converter(message : telebot.types.Message):
 
 
 bot.polling(none_stop = True)
+
 
 
 
